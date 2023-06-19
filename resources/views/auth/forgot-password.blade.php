@@ -1,34 +1,40 @@
 <x-guest-layout>
-    <x-jet-authentication-card>
-        <x-slot name="logo">
-            <x-jet-authentication-card-logo />
-        </x-slot>
 
-        <div class="mb-4 text-sm text-gray-600">
-            {{ __('Forgot your password? No problem. Just let us know your email address and we will email you a password reset link that will allow you to choose a new one.') }}
-        </div>
+    <div class="col-md-5">
 
-        @if (session('status'))
-            <div class="mb-4 font-medium text-sm text-green-600">
-                {{ session('status') }}
-            </div>
-        @endif
+        <div class="banner-center-box text-center text-white">
+            <div class="cta-subscribe cta-subscribe-2 box-form">
+                <div class="box-title text-white">
+                    <h3 class="title">Andien - Kejari</h3>
+                    <p>Silahkan masukkan email akun anda, selanjutnya akan kami kirim alamat untuk perbarui kata sandi anda ke email anda.</p>
+                    <img class="svg" src="{{ asset('assets/img/rounded.svg') }}" alt="">
+                </div><!-- .box-title end -->
+                <div class="box-content">
+                    <form id="loginform" action="{{ route('password.email') }}" method="POST" id="form-cta-subscribe-2" class="form-inline" style="min-height: 300px;">
+                        @csrf
 
-        <x-jet-validation-errors class="mb-4" />
+                        @if (session('status'))
+                        <div class="box-content">
+                            <div class="alert-danger" style="padding-bottom:20px">
+                                {{ (session('status')) }}
+                            </div>
+                        </div>
+                        @endif
+                        
+                        <div class="form-group">
+                            <label for="email" value="{{ __('Email') }}">Email</label>
+                            <input type="email" id="email" type="email" name="email" :value="old('email')" class="form-control" required autofocus>
+                        </div><!-- .form-group end -->
 
-        <form method="POST" action="{{ route('password.email') }}">
-            @csrf
+                        <div class="form-group">
+                            <input type="submit" class="form-control" value="Reset Password">
 
-            <div class="block">
-                <x-jet-label for="email" value="{{ __('Email') }}" />
-                <x-jet-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" required autofocus />
-            </div>
+                        </div><!-- .form-group end -->
+                    </form><!-- #form-cta-subscribe-2 end -->
+                </div><!-- .box-content end -->
+            </div><!-- .box-form end -->
+        </div><!-- .banner-center-box end -->
 
-            <div class="flex items-center justify-end mt-4">
-                <x-jet-button>
-                    {{ __('Email Password Reset Link') }}
-                </x-jet-button>
-            </div>
-        </form>
-    </x-jet-authentication-card>
+    </div><!-- .col-md-5 end -->
+   
 </x-guest-layout>

@@ -13,6 +13,7 @@ $user = auth()->user();
     <ul class="navbar-nav navbar-right">
         <li class="dropdown"><a href="#" data-turbolinks="false" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
             @if (!is_null($user))
+                <img alt="image" src="{{ $user->profile_photo_url }}" class="d-sm-none d-lg-inline-block rounded-circle mr-0">
                 <div class="d-sm-none d-lg-inline-block">Hi, {{ $user->name }}</div></a>
             @else
                 <div class="d-sm-none d-lg-inline-block">Hi, Welcome</div></a>

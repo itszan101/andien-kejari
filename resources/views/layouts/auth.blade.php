@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="en">
 <head>
-    <link href="{{ asset('assets/css/css-assets.css') }}" rel="stylesheet">
-	<link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
+    <link href="css/css-assets.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,400i,700,700i" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700i,700" rel="stylesheet">
 
 	<!-- Favicon
 	============================================= -->
-	<link rel="shortcut icon" href="{{ asset('assets/img/LOGO_KEJAKSAAN.png') }}">
+	<link rel="shortcut icon" href="img/LOGO_KEJAKSAAN.png">
 	<link rel="apple-touch-icon" href="images/general-elements/favicon/apple-touch-icon.png">
 	<link rel="apple-touch-icon" sizes="72x72" href="images/general-elements/favicon/apple-touch-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="114x114" href="images/general-elements/favicon/apple-touch-icon-114x114.png">
@@ -63,7 +63,7 @@
 		<section id="banner">
 
 			<div class="banner-parallax" data-banner-height="800">
-				<img src="{{ asset('assets/img/bg-kejaksaan2.png') }}" alt="">
+				<img src="img/bg.png" alt="">
 				<div class="overlay-colored color-bg-gradient opacity-90"></div><!-- .overlay-colored end -->
 				<div class="slide-content">
 
@@ -71,7 +71,7 @@
 						<div class="row">
 							<div class="col-md-7">
 								<a class="logo logo-header" href="#">
-									<img src="{{ asset('assets/img/LOGO_KEJAKSAAN.png') }}" alt="" style="width: 130px;padding-bottom: 136px;padding-top: 40px;">
+									<img src="img/LOGO_KEJAKSAAN.png" alt="" style="width: 130px;padding-bottom: 136px;padding-top: 40px;">
 									<h3><span class="colored">ANDIEN</span></h3>
 									<span>KEJARI-KABOKI</span>
 								</a><!-- .logo end -->
@@ -86,8 +86,8 @@
 								</div>
 
 							</div><!-- .col-md-7 end -->
-
-							{{ $slot }}
+							
+                            @yield('content')
 
 						</div><!-- .row end -->
 					</div><!-- .container end -->
@@ -126,7 +126,28 @@
 
 
 
-		
+			<div id="footer-bar-2" class="footer-bar">
+
+				<div class="footer-bar-wrap">
+
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+
+								<div class="fb-row">
+									<div class="copyrights-message" style="text-align: center !important;">
+										<center>2023 © <a href="https://news.kaboki.go.id/" target="_blank"><span class="colored">Kejaksaan Negeri Kabupaten OKI </span></a>. All Rights Reserved.</center>
+									</div>
+
+								</div><!-- .fb-row end -->
+
+							</div><!-- .col-md-12 end -->
+						</div><!-- .row end -->
+					</div><!-- .container end -->
+
+				</div><!-- .footer-bar-wrap -->
+
+			</div><!-- #footer-bar-2 end -->
 
 		</footer><!-- #footer end -->
 
@@ -136,11 +157,27 @@
 
 	<!-- External JavaScripts
 	============================================= -->
-	<script src="{{ asset('assets/js/jquery.js') }}"></script>
-	<script src="{{ asset('assets/js/jRespond.min.js') }}"></script>
-	<script src="{{ asset('assets/js/jquery.fitvids.js') }}"></script>
-	<script src="{{ asset('assets/js/jquery.magnific-popup.min.js') }}"></script>
-	<script src='{{ asset('assets/js/functions.js') }}'></script>
-	
+	<script src="js/jquery.js"></script>
+	<script src="js/jRespond.min.js"></script>
+	<script src="js/jquery.fitvids.js"></script>
+	<script src="js/jquery.magnific-popup.min.js"></script>
+	<script src='js/functions.js'></script>
+
+
+	<!-- <script src="https://eofficedesa.mubakab.go.id/asset/e-office/js/jquery.js"></script>
+	<script src="https://eofficedesa.mubakab.go.id/asset/e-office/js/jRespond.min.js"></script>
+	<script src="https://eofficedesa.mubakab.go.id/asset/e-office/js/jquery.fitvids.js"></script>
+	<script src="https://eofficedesa.mubakab.go.id/asset/e-office/js/jquery.magnific-popup.min.js"></script>
+	<script src="https://eofficedesa.mubakab.go.id/asset/e-office/js/functions.js"></script> -->
+
+	<!-- <script src="https://eofficedesa.mubakab.go.id/asset/e-office/js/jquery.easing.min.js"></script>
+	<script src="https://eofficedesa.mubakab.go.id/asset/e-office/js/jquery.waypoints.min.js"></script> -->
+	<!-- <script src="https://eofficedesa.mubakab.go.id/asset/e-office/js/jquery.stellar.js"></script>
+	<script src="https://eofficedesa.mubakab.go.id/asset/e-office/js/owl.carousel.min.js"></script>
+	<script src="https://eofficedesa.mubakab.go.id/asset/e-office/js/jquery.mb.YTPlayer.min.js"></script> -->
+	<!-- <script src="https://eofficedesa.mubakab.go.id/asset/e-office/js/jquery.ajaxchimp.min.js"></script>
+	<script src="https://eofficedesa.mubakab.go.id/asset/e-office/js/jquery.validate.min.js"></script>
+	<script src="https://eofficedesa.mubakab.go.id/asset/e-office/js/simple-scrollbar.min.js"></script> -->
+
 </body>
 </html>
