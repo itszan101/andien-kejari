@@ -38,9 +38,17 @@ $navigation_links = array_to_object($links);
 
             <li class="menu-header">{{ ('Menu') }}</li>
 
-            <li class="{{ Request::routeIs('dashboard') ? 'active' : '' }}">
+            <li class="{{ Request::routeIs('dashboard') || Request::routeIs('upload.form') ? 'active' : '' }}">
                 <a class="nav-link" href="{{ route('dashboard') }}"><i class="fas fa-fire"></i><span>{{ ('Dashboard')  }}</span></a>
             </li>
+
+            {{-- <li class="dropdown {{ Request::routeIs('car.index') || Request::routeIs('car.create') ? 'active' : '' }}">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-clipboard"></i> <span>{{__('Information Management')}}</span></a>
+                <ul class="dropdown-menu">
+                    <li class="{{ Request::routeIs('car.index') ? 'active' : '' }}"><a class="nav-link" href="{{ route('car.index') }}">{{__('Car Management')}}</a></li>
+                    <li class="{{ Request::routeIs('division.index') ? 'active' : '' }}"><a class="nav-link" href="{{ route('division.index') }}">{{__('Division Management')}}</a></li>
+                </ul>
+            </li> --}}
 
                     <li class="dropdown {{ Request::routeIs('user') ? 'active' : '' }}">
                         <a href="{{ route('user') }}" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-chart-bar"></i> <span>{{ ('Manage User') }}</span></a>
