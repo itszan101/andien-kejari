@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Traits;
-
+use Illuminate\Support\Facades\Auth;
 
 trait WithDataTable {
     
@@ -26,6 +26,29 @@ trait WithDataTable {
                     ])
                 ];
                 break;
+            
+                case 'filedata':
+                    if (Auth::user()->is_admin) {
+                        $filedata = $this->model::search($this->search)
+                            ->orderBy($this->sortField, $this->sortAsc ? 'asc' : 'desc')
+                            ->paginate($this->perPage);
+                        } else {
+                        $filedata = $this->model::where('user_id', '=', auth()->user()->id)->get();
+                    }
+    
+                    return [
+                        "view" => 'livewire.table.filedata',
+                        "filedata" => $filedata,
+                        "data" => array_to_object([
+                            'href' => [
+                                'create_new' => route('upload'),
+                                'create_new_text' => 'Tambah Data File Arsip',
+                                'export' => '#',
+                                'export_text' => 'Export'
+                            ]
+                        ])
+                    ];
+                    break;
 
             default:
                 # code...

@@ -10,7 +10,7 @@ if (Auth::user()->is_admin) {
             'href' => [
                 [
                     'section_text' => 'Penyimpanan',
-                    'section_list' => [['href' => 'dashboard', 'text' => 'Daftar File'], ['href' => 'dashboard', 'text' => 'Upload File Arsip']],
+                    'section_list' => [['href' => 'upload', 'text' => 'Daftar File'], ['href' => 'upload', 'text' => 'Upload File Arsip']],
                     'section_icon' => 'fa fa-file-archive-o',
                 ],
             ],
@@ -35,6 +35,17 @@ if (Auth::user()->is_admin) {
             'href' => 'dashboard',
             'text' => 'Dashboard',
             'is_multi' => false,
+        ],
+        [
+            'href' => [
+                [
+                    'section_text' => 'Penyimpanan',
+                    'section_list' => [['href' => 'upload', 'text' => 'Daftar File'], ['href' => 'upload', 'text' => 'Upload File Arsip']],
+                    'section_icon' => 'fa fa-file-archive-o',
+                ],
+            ],
+            'text' => 'Penyimpanan Arsip',
+            'is_multi' => true,
         ],
     ];
 }

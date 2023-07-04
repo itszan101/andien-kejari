@@ -12,4 +12,13 @@ class File extends Model
     {
         return $this->belongsTo(User::class);
     }
+    /**
+     * Search query in multiple whereOr
+     */
+    public static function search($query)
+    {
+        return empty($query) ? static::query()
+            : static::where('nama', 'like', '%' . $query . '%')
+            ->orWhere('golongan', 'like', '%' . $query . '%');
+    }
 }

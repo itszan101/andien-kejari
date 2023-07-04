@@ -70,4 +70,8 @@ class User extends Authenticatable implements MustVerifyEmail
             : static::where('name', 'like', '%'.$query.'%')
                 ->orWhere('email', 'like', '%'.$query.'%');
     }
+    public function file()
+    {
+        return $this->hasMany(File::class);
+    }
 }

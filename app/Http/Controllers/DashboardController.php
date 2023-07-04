@@ -13,13 +13,13 @@ class DashboardController extends Controller
         $user = Auth::user();
         $files = File::where('user_id', $user->id)->get();
 
-        return view('livewire.file.index', compact('files'));
+        return view('dashboard', compact('files'));
     }
 
     public function uploadform()
     {
         $user = Auth::user();
         $files = File::where('user_id', $user->id)->get();
-        return view('livewire.file.uploadform', compact('files'));
+        return view('dashboard', compact('files'));
     }
 }
