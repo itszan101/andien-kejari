@@ -42,7 +42,7 @@ $user = auth()->user();
                                                 <th width="">{{__("ID")}}</th>
                                                 <th width="">{{__("File Name")}}</th>
                                                 <th width="">{{__("Created_at")}}</th>
-                                                {{-- <th width="">{{__("Password")}}</th> --}}
+                                                <th width="">{{__("Password")}}</th>
                                                 <th width="">{{__("action")}}</th>
                                             </thead>
                                             <tbody>
@@ -51,10 +51,10 @@ $user = auth()->user();
                                                         <td>{{ $user->id }}</td>
                                                         <td>{{ $user->name }}</td>
                                                         <td>{{ $user->created_at->format('d M Y H:i') }}</td>
-                                                        {{-- <td>
+                                                        <td>
                                                             <label></label>
                                                             <input type="password" name="password" id="password" class="form-control" required="">
-                                                        </td> --}}
+                                                        </td>
                                                         <td class="whitespace-no-wrap row-action--icon">
                                                             <a role="button" href="/user/edit/{{ $user->id }}" class="mr-3"><i class="btn btn-outline-success">Download</i></a>
                                                             <a role="button" x-on:click.prevent="deleteItem" href="#"><i class="btn btn-outline-danger">Hapus</i></a>

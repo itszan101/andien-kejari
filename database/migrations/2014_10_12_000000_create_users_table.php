@@ -28,6 +28,7 @@ class CreateUsersTable extends Migration
                 $table->timestamp('two_factor_confirmed_at')
                         ->nullable();
             }
+            $table->boolean('is_admin')->default(0);
         });
     }
 

@@ -36,4 +36,5 @@ Route::group([ "middleware" => ['auth:sanctum', config('jetstream.auth_session')
     
         Route::post('/files/upload', [FileController::class, 'upload'])->name('files.upload');
         Route::post('/files/{id}/download', [DownloadController::class, 'download'])->name('files.download');
+        Route::delete('/files/{id}/delete', [DashboardController::class, 'deleteFile'])->name('files.delete');
 });
