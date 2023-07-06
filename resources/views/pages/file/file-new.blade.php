@@ -1,6 +1,6 @@
 <x-app-layout>
     <x-slot name="header_content">
-        <h1>{{ __('Data File') }}</h1>
+        <h1>{{ __('Upload File') }}</h1>
 
         <div class="section-header-breadcrumb">
             <div class="breadcrumb-item active"><a href="#">Dashboard</a></div>
@@ -10,6 +10,6 @@
     </x-slot>
 
     <div>
-        <livewire:table.main name="filedata" :model="$filedata" />
+        <livewire:add-files action="addFile" />
     </div>
 </x-app-layout>

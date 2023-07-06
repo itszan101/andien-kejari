@@ -41,7 +41,7 @@ trait WithDataTable {
                         "filedata" => $filedata,
                         "data" => array_to_object([
                             'href' => [
-                                'create_new' => route('upload'),
+                                'create_new' => route('upload.new'),
                                 'create_new_text' => 'Tambah Data File Arsip',
                                 'export' => '#',
                                 'export_text' => 'Export'
