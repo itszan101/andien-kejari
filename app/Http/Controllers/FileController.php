@@ -13,7 +13,7 @@ class FileController extends Controller
     public function index_view()
     {
         return view('pages.file.file-data', [
-            'files' => File::class
+            'filedata' => File::class
         ]);
     }
 

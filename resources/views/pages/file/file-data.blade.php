@@ -10,6 +10,6 @@
     </x-slot>
 
     <div>
-        <livewire:table.main name="filedata" :model="$files" />
+        <livewire:table.main name="filedata" :model="$filedata" />
     </div>
 </x-app-layout>

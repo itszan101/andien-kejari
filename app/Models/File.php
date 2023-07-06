@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class File extends Model
 {
-    protected $fillable = ['name', 'path', 'user_id'];
+    protected $fillable = ['name', 'path', 'user_id', 'deskripsi'];
 
     public function user()
     {
@@ -18,7 +18,6 @@ class File extends Model
     public static function search($query)
     {
         return empty($query) ? static::query()
-            : static::where('nama', 'like', '%' . $query . '%')
-            ->orWhere('golongan', 'like', '%' . $query . '%');
+            : static::where('name', 'like', '%' . $query . '%');
     }
 }
