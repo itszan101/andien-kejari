@@ -9,15 +9,15 @@ use Illuminate\Support\Facades\Auth;
 
 class AddFile extends Component
 {
-    public $action;
-    public $button;
-    public $filepath;
+    // public $action;
+    // public $button;
+    // public $filepath;
 
-    protected function rules() {
-        if ($this->action == "updateFile") {
-            return [
+    // protected function rules() {
+    //     if ($this->action == "updateFile") {
+    //         return [
                 
-            ]
-        }
-    }
+    //         ]
+    //     }
+    // }
 }

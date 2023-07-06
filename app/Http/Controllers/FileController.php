@@ -26,6 +26,7 @@ class FileController extends Controller
 
         $file = $request->file('file');
         $password = bcrypt($request->input('password'));
+        $deskripsi = $request->input('deskripsi');
 
         // Encrypt the file content
         $encryptedContent = Crypt::encrypt(file_get_contents($file->path()));
@@ -42,8 +43,13 @@ class FileController extends Controller
         $fileModel->password = $password;
         $fileModel->path = $encryptedFilename;
         $fileModel->user_id = Auth::id();
+        $fileModel->deskripsi = $deskripsi;
         $fileModel->save();
 
-        return redirect()->back()->with('success', 'File uploaded successfully!');
+        if (!empty($deskripsi)){
+            return redirect()->back()->with('success', 'File uploaded successfully!');
+        } else {
+            return redirect()-back()->with('Gagal', 'Kolom wajib disi');
+        }
     }
 }

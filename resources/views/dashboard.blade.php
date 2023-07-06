@@ -48,6 +48,10 @@ $user = auth()->user();
                                 <input type="password" name="password" id="password">
                             </div>
                             <div>
+                                <label for="deskripsi">Deskripsi:</label>
+                                <input type="deskripsi" name="deskripsi" id="deskripsi">
+                            </div>
+                            <div>
                                 <button type="submit">Upload</button>
                             </div>
                         </form>
@@ -56,6 +60,7 @@ $user = auth()->user();
                             @foreach ($files as $file)
                                 <div class="file-item">
                                     <div class="file-name">{{ $file->name }}</div>
+                                    <div class="file-name">{{ $file->deskripsi }}</div>
                                     <form action="{{ route('files.download', $file->id) }}" method="POST">
                                         @csrf
                                         <div>

@@ -14,7 +14,7 @@ class CreateFilesTable extends Migration
             $table->string('password');
             $table->string('path');
             $table->string('deskripsi');
-            $table->foreignId('user_id')->constrained();
+            $table->foreignId('user_id')->index()->constrained();
             $table->timestamps();
         });
     }

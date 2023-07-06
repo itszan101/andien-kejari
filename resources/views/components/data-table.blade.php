@@ -38,7 +38,9 @@
         </div>
 
         <div id="table_pagination" class="py-3">
+            @if (Auth::user()->is_admin)
             {{ $model->onEachSide(1)->links() }}
+            @endif
         </div>
     </div>
 </div>
