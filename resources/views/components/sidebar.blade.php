@@ -55,13 +55,10 @@ $navigation_links = array_to_object($links);
 <div class="main-sidebar">
     <aside id="sidebar-wrapper">
         <div class="sidebar-brand">
-            <a href="{{ route('dashboard') }}">Dashboard</a>
+            <img class="d-inline-block" width="32px" height="30.61px" src="{{ asset('assets/img/LOGO_KEJAKSAAN.png') }}" alt="">
+            <a href="{{ route('dashboard') }}">ANDIEN-KEJARI</a>
         </div>
-        <div class="sidebar-brand sidebar-brand-sm">
-            <a href="{{ route('dashboard') }}">
-                <img class="d-inline-block" width="32px" height="30.61px" src="{{ asset('storage/img/logo_bappeda.png') }}" alt="">
-            </a>
-        </div>
+        
         @foreach ($navigation_links as $link)
             <ul class="sidebar-menu">
                 <li class="menu-header">{{ $link->text }}</li>
