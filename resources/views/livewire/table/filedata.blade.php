@@ -12,6 +12,7 @@
                     </a></th>
                 <th>Deskripsi</th>
                 <th>Tanggal Upload</th>
+                <th>Password</th>
                 <th>Action</th>
             </tr>
         </x-slot>
@@ -22,14 +23,42 @@
                     <td>{{ $file->name }}</td>
                     <td>{{ $file->deskripsi }}</td>
                     <td>{{ $file->created_at }}</td>
-                    <td class="whitespace-no-wrap row-action--icon">
-                        
-                        <a role="button" href="#" class="mr-3"><i 
-                                class="fa fa-16px fa-pen"></i></a>
-                        <a role="button" x-on:click.prevent="deleteItem" href="#"><i
+                    
+                        <td>
+                            @if (session('success'))
+                            <div class="alert alert-success">
+                                {{ session('success') }}
+                            </div>
+                        @endif
+    
+                        @if (session('error'))
+                            <div class="alert alert-danger">
+                                {{ session('error') }}
+                            </div>
+                        @endif
+                            <form action="{{ route('files.download', $file->id) }}" method="POST">
+                            @csrf
+                            <div class="form-group col-span-6 sm:col-span-5">
+                                    <label class="block font-medium text-sm text-gray-700" for="password">
+                                    Password
+                                    </label>
+                                <input  class="form-input rounded-md shadow-sm mt-1 block w-full form-control shadow-none" type="password" name="password" id="password">
+                            </div>
+                        </td>
+
+                            <td class="whitespace-no-wrap row-action--icon">
+                                {{-- <div>
+                                    <button type="submit" class="fa fa-16px fa fa-download"></button>
+                                </div> --}}
+                                <button type="submit">
+                                <a><i class="fa fa-16px fa fa-download"></i></a></button>
+                            <a role="button" x-on:click.prevent="deleteItem" href="#"><i
                                 class="fa fa-16px fa-trash text-red-500"></i></a>
+                            </td>
+                        </form>
                         
-                    </td>
+                        
+                    
                 </tr>
             @endforeach
         </x-slot>

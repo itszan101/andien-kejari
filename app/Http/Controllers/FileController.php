@@ -47,7 +47,7 @@ class FileController extends Controller
         $fileModel->save();
 
         if (!empty($deskripsi)){
-            return redirect()->back()->with('success', 'File uploaded successfully!');
+            return redirect()->back()->with('success', 'File berhasil diuggah!');
         } else {
             return redirect()-back()->with('Gagal', 'Kolom wajib disi');
         }

@@ -33,7 +33,7 @@ Route::group([ "middleware" => ['auth:sanctum', config('jetstream.auth_session')
         Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
         Route::get('/upload', [FileController::class, 'index_view'])->name('upload');
-        Route::view('/upload/new', "pages.file.file-new")->name('upload.new');
+        Route::view('/upload/new', "pages.file.file-neww")->name('upload.new');
 
         Route::post('/files/upload', [FileController::class, 'upload'])->name('files.upload');
         Route::post('/files/{id}/download', [DownloadController::class, 'download'])->name('files.download');
